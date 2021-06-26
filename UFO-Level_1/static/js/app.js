@@ -23,28 +23,31 @@ tableData.forEach(function(ufo){            // Two ways: declaring a function or
     });
 });
 
-// Select the button and create function
+// Select the button and create function.
 var button = d3.select("#filter-btn");
 
 button.on("click", function(){
     
-    // Select the input element and get the html node
+    // Select the input element and get the html node.
     var inputElement = d3.select(".form-control");
     
-    // Get the value property of the input element
+    // Get the value property of the input element.
     var inputDate = inputElement.property("value");
-    console.log(inputDate)
+    // console.log(inputDate)
     
-    // filter data for the date value to get data that is searched for
+    // Filter data for the date value to get data that was chosen (inputDate).
     var filteredData = tableData.filter(ufo => ufo.datetime === inputDate);
     //console.log(filteredData);
 
-    // select the table body to insert table rows and cells
+// Clean the existing data to print the new search.
+    // Select the table body to insert table rows and cells.
     var tbody = d3.select("tbody")
-    // clean the table body to insert selected date values
+    
+    // Clean the table body to insert selected date values.
     tbody.html("");
 
-    // loop through filtered data to insert rows and cells for each object
+// Similar to initial code but the function is related to the new variable "filteredData".
+    // Loop through filtered data to insert rows and cells for each object.
     filteredData.forEach(function(ufo){
         var row = tbody.append("tr");
         Object.entries(ufo).forEach(function([key, value]){
