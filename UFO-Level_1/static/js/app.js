@@ -13,7 +13,7 @@ tableData.forEach(function(ufo){            // Two ways: declaring a function or
     // Iterate through each row for key and values.
     
     Object.entries(ufo).forEach(function([key,value]){
-        // console.log(key, value);         // Verify the print of each key&value from UFO variable.
+        // console.log(key, value);         // Verify the print of each key&value from UFO function.
         
         // Function to add the "td" in each row to create the table:
         // Use append to insert a cell for each value in the UFO Report.
